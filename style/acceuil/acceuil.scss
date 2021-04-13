@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+$colorFont : #C3CBD6;
+$colorTxt : #2A403D;
+$color1 : #748B6F;
+$color2 : #D05663;
+$blanc : white;
+$hauteur : 40px;
+$largeur : 80px;
+
+// -----------MEDIA ----------------------------------
+@media screen and (min-width: 851px) {
+  
+  body {
+    font-size: 20px;
+  }
+  input{
+    margin-left: 3px;
+  }
+  #acceuil{
+    margin: 150px auto;
+    box-shadow: 3px 3px 10px $colorTxt;
+    border-radius: 10px;
+    width: 85%;
+    padding: 4%;
+  }
+}
+@media screen and (max-width: 851px) {
+
+  body {
+    font-size: 13px;
+  }
+  #acceuil{
+    margin: 50px 0px;
+    padding: 5px;
+  }
+}
+// ------------------------------------------------
+body{
+  font-family: 'Roboto', sans-serif;
+  background: $color1;
+}
+
+#acceuil{
+  position: relative;
+  z-index: 1;
+  font-size: 1em;
+  background: $colorFont;
+  h1{
+    animation: .5s linear 0s apparition forwards;
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin: 10px;
+    color: $colorTxt;
+  }
+  h2{
+    animation: .6s linear 0s apparition forwards;
+    font-size: 1.1em;
+    width: 70%;
+    text-align: center;
+    display: block;
+    margin: 50px auto;
+    color: $colorTxt;
+  }
+  .btn{
+    
+    animation: 1.3s linear 0s apparition forwards;
+    margin: 0 auto;
+    display: block;
+  }
+  .row{
+    animation: 1s linear 0s apparition forwards;
+    transform: scale(1,1);
+    transition: all .8s;
+  }
+
+  input{
+    text-align: center;
+    transition: all .5s;
+    border-radius: 5px;
+    border: 2px solid $color2;
+    color: $blanc;
+    padding: 3px;
+    background: $color1;
+  }
+  input:focus, input:hover{
+    background: $color2;
+    color: $blanc;
+    border-color:$color1;
+  }
+  .btn{
+    animation: 2s linear 0s apparition forwards;
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 5px;
+    border: 8px;
+    background: $color1;
+    border: 2px solid $color2;
+    color: $blanc;
+    cursor: pointer;
+    transition: all .6s;
+    border-radius: 10px;
+    &:hover{
+      background: $color2;
+      color: white;
+      border-color: $colorTxt;
+    }
+  }
+
+  .bodyButton{
+
+    position : relative;
+    background : $color1;
+    width : $largeur;
+    height : $hauteur;
+    border-radius : $hauteur;
+    border : 2px solid $color2;
+    margin: 10px;
+    cursor: pointer;
+    
+    .buttonNum{
+      $largeur-btn : $largeur/1.6;
+      position : absolute;
+      top: 0px;
+      right: ($largeur) - ($largeur-btn);
+      background : $colorTxt;
+      width : $largeur-btn;
+      height: $hauteur;
+      border-radius : $hauteur;
+      transition : all .5s ease-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $blanc;
+    }
+    .buttonNumValide{
+      right: 0px;
+    }
+  
+  }
+  .Signal{
+    width: 60%;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 0.7em;
+    color: $color2;
+  }
+  .btnHelp{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    cursor: pointer;
+    color: $color2;
+  }
+
+  .modalHelp{
+    transform: scale(0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background:#748b6f83;
+
+    .bodyModal{
+      width: 80%;
+      display: block;
+      margin: 30vh auto;
+      border-radius: 10px;
+      background: $colorFont;
+      padding: 10px;
+      border: 2px solid $color2;
+    }
+    .modalTitle{
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+    .modalText{
+      text-align: center;
+      font-size: 1em;
+      padding: 5px;
+    }
+    .btnClose{
+      cursor: pointer;
+      padding: 2px;
+      background: $color1;
+      color: $blanc;
+      width: 30%;
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+      border-radius: 10px;
+      border: 2px solid $color2;
+      transition: all .4s;
+
+      &:hover{
+        width: 40%;
+        padding: 5px;
+        background: $blanc;
+        color: $color2;
+        border-color: $color2 ;
+      }
+    }
+  }
+}
+
+
+// Animation
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disparition {
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  80% {
+    opacity: 1;
+    margin-left: 50px;
+  }
+  100%{
+    display: none;
+  }
+}
+
+// Soulignage dynamique
+.underline{
+  position: relative;
+  cursor: pointer;
+}
+.underline::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  margin: 0 auto;
+  background: $color1;
+  transition: width 0.4s ;
+  border-radius : 2px;
+}
+.underline:hover::after{
+  width: 100%;
+}
+
+// class préfaite
+
+
+@media screen and (min-width: 851px) {
+
+.row{
+  flex-direction: row;
+}
+.txt-r{
+  text-align: right;
+}
+
+}
+@media screen and (max-width: 850px) {
+
+  .row{
+    flex-direction: column;
+  }
+  .txt-r{
+    text-align: center;
+  }
+  .bloc{
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+.bloc{
+  display: block;
+}
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  .col{
+    width: 50%;
+  }
+}

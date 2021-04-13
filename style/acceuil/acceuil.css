@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+@media screen and (min-width: 851px) {
+  body {
+    font-size: 20px;
+  }
+  input {
+    margin-left: 3px;
+  }
+  #acceuil {
+    margin: 150px auto;
+    -webkit-box-shadow: 3px 3px 10px #2A403D;
+            box-shadow: 3px 3px 10px #2A403D;
+    border-radius: 10px;
+    width: 85%;
+    padding: 4%;
+  }
+}
+
+@media screen and (max-width: 851px) {
+  body {
+    font-size: 13px;
+  }
+  #acceuil {
+    margin: 50px 0px;
+    padding: 5px;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #748B6F;
+}
+
+#acceuil {
+  position: relative;
+  z-index: 1;
+  font-size: 1em;
+  background: #C3CBD6;
+}
+
+#acceuil h1 {
+  -webkit-animation: .5s linear 0s apparition forwards;
+          animation: .5s linear 0s apparition forwards;
+  font-size: 1.2em;
+  text-decoration: underline;
+  margin: 10px;
+  color: #2A403D;
+}
+
+#acceuil h2 {
+  -webkit-animation: .6s linear 0s apparition forwards;
+          animation: .6s linear 0s apparition forwards;
+  font-size: 1.1em;
+  width: 70%;
+  text-align: center;
+  display: block;
+  margin: 50px auto;
+  color: #2A403D;
+}
+
+#acceuil .btn {
+  -webkit-animation: 1.3s linear 0s apparition forwards;
+          animation: 1.3s linear 0s apparition forwards;
+  margin: 0 auto;
+  display: block;
+}
+
+#acceuil .row {
+  -webkit-animation: 1s linear 0s apparition forwards;
+          animation: 1s linear 0s apparition forwards;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+#acceuil input {
+  text-align: center;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  border-radius: 5px;
+  border: 2px solid #D05663;
+  color: white;
+  padding: 3px;
+  background: #748B6F;
+}
+
+#acceuil input:focus, #acceuil input:hover {
+  background: #D05663;
+  color: white;
+  border-color: #748B6F;
+}
+
+#acceuil .btn {
+  -webkit-animation: 2s linear 0s apparition forwards;
+          animation: 2s linear 0s apparition forwards;
+  display: block;
+  width: 60%;
+  margin: 20px auto;
+  text-align: center;
+  padding: 5px;
+  border: 8px;
+  background: #748B6F;
+  border: 2px solid #D05663;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  border-radius: 10px;
+}
+
+#acceuil .btn:hover {
+  background: #D05663;
+  color: white;
+  border-color: #2A403D;
+}
+
+#acceuil .bodyButton {
+  position: relative;
+  background: #748B6F;
+  width: 80px;
+  height: 40px;
+  border-radius: 40px;
+  border: 2px solid #D05663;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#acceuil .bodyButton .buttonNum {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  background: #2A403D;
+  width: 50px;
+  height: 40px;
+  border-radius: 40px;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+#acceuil .bodyButton .buttonNumValide {
+  right: 0px;
+}
+
+#acceuil .Signal {
+  width: 60%;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  font-size: 0.7em;
+  color: #D05663;
+}
+
+#acceuil .btnHelp {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+  cursor: pointer;
+  color: #D05663;
+}
+
+#acceuil .modalHelp {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background: #748b6f83;
+}
+
+#acceuil .modalHelp .bodyModal {
+  width: 80%;
+  display: block;
+  margin: 30vh auto;
+  border-radius: 10px;
+  background: #C3CBD6;
+  padding: 10px;
+  border: 2px solid #D05663;
+}
+
+#acceuil .modalHelp .modalTitle {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+#acceuil .modalHelp .modalText {
+  text-align: center;
+  font-size: 1em;
+  padding: 5px;
+}
+
+#acceuil .modalHelp .btnClose {
+  cursor: pointer;
+  padding: 2px;
+  background: #748B6F;
+  color: white;
+  width: 30%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #D05663;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+#acceuil .modalHelp .btnClose:hover {
+  width: 40%;
+  padding: 5px;
+  background: white;
+  color: #D05663;
+  border-color: #D05663;
+}
+
+@-webkit-keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disparition {
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  80% {
+    opacity: 1;
+    margin-left: 50px;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes disparition {
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  80% {
+    opacity: 1;
+    margin-left: 50px;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.underline {
+  position: relative;
+  cursor: pointer;
+}
+
+.underline::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  margin: 0 auto;
+  background: #748B6F;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+  border-radius: 2px;
+}
+
+.underline:hover::after {
+  width: 100%;
+}
+
+@media screen and (min-width: 851px) {
+  .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .txt-r {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .txt-r {
+    text-align: center;
+  }
+  .bloc {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.bloc {
+  display: block;
+}
+
+.row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+
+.row .col {
+  width: 50%;
+}
+/*# sourceMappingURL=acceuil.css.map */

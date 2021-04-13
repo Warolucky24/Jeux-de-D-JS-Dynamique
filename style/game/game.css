@@ -1,0 +1,331 @@
+@media screen and (min-width: 851px) {
+  .boxJoueurUn,
+  .boxJoueurDeux,
+  .outils {
+    width: 30%;
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #imgPlayerUn,
+  #imgPlayerDeux {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+  }
+  .boxJoueurUn {
+    border-radius: 20px 0px 0px 20px;
+  }
+  .boxJoueurDeux {
+    border-radius: 0px 20px 20px 0px;
+  }
+  #files {
+    width: 300px;
+    height: 250px;
+  }
+  .gameBoard {
+    width: 98%;
+    background: #c3cbd6;
+    border: 2px solid #d05663;
+    border-radius: 10px 40px;
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #game {
+    background: #c3cbd6;
+  }
+  .gameBoard {
+    width: 100%;
+    height: 100vh;
+  }
+  .boxJoueurUn,
+  .boxJoueurDeux {
+    width: 97%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (33%)[3];
+        grid-template-columns: repeat(3, 33%);
+    -ms-grid-rows: (50%)[2];
+        grid-template-rows: repeat(2, 50%);
+    -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .outils {
+    width: 97%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 44% 28% 28%;
+        grid-template-columns: 44% 28% 28%;
+    -ms-grid-rows: 80% 20%;
+        grid-template-rows: 80% 20%;
+        grid-template-areas: "file cube cube" "file roll valid";
+  }
+  .outils #files {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: file;
+    width: 100%;
+    height: 200px;
+  }
+  .outils #dd {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: cube;
+  }
+  .outils #roll {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: roll;
+  }
+  .outils #globalAdd {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: valid;
+  }
+  .boxJoueurUn,
+  .boxJoueurDeux {
+        grid-template-areas: "img name pointRound" "img name pointGlobal";
+  }
+  .boxJoueurUn #imgPlayerUn,
+  .boxJoueurUn #imgPlayerDeux,
+  .boxJoueurDeux #imgPlayerUn,
+  .boxJoueurDeux #imgPlayerDeux {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: img;
+  }
+  .boxJoueurUn #nameJoueurUn,
+  .boxJoueurUn #nameJoueurDeux,
+  .boxJoueurDeux #nameJoueurUn,
+  .boxJoueurDeux #nameJoueurDeux {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: name;
+  }
+  .boxJoueurUn .pointRUn,
+  .boxJoueurUn .pointRDeux,
+  .boxJoueurDeux .pointRUn,
+  .boxJoueurDeux .pointRDeux {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: pointRound;
+  }
+  .boxJoueurUn .pointGUn,
+  .boxJoueurUn .pointGDeux,
+  .boxJoueurDeux .pointGUn,
+  .boxJoueurDeux .pointGDeux {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: pointGlobal;
+  }
+  #imgPlayerUn,
+  #imgPlayerDeux {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+  .boxJoueurUn {
+    border-radius: 20px 20px 0px 0px;
+  }
+  .boxJoueurDeux {
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+
+#game {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+  background: url("../img/fundDeux.jpg") no-repeat;
+  background-size: cover;
+}
+
+#game .gameBoard {
+  position: relative;
+  margin: 20px auto;
+  background: rgba(238, 238, 238, 0.4);
+}
+
+#game .boxJoueurUn,
+#game .boxJoueurDeux,
+#game .outils {
+  padding: 5px;
+  margin: 1%;
+}
+
+#game .boxJoueurUn span,
+#game .boxJoueurDeux span,
+#game .outils span {
+  font-weight: bold;
+}
+
+#game .boxJoueurUn {
+  border: 2px solid #2a403d;
+  background: #748b6f56;
+}
+
+#game .boxJoueurDeux {
+  border: 2px solid #d05663;
+  background: #d0566249;
+}
+
+#game .outils {
+  border: 2px solid #2a403d;
+  background: #748b6f;
+}
+
+#game .outils #roll,
+#game .outils #globalAdd {
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+#game .outils .btnRestart {
+  background: #d05663;
+  color: white;
+  border: 2px solid #c3cbd6;
+}
+
+#game .outils .btnRestart:hover {
+  background: white;
+  border-color: #d05663;
+  color: #d05663;
+}
+
+#game .outils #globalAdd,
+#game .outils #roll {
+  background: #748b6f;
+  color: white;
+  border: 2px solid white;
+}
+
+#game .outils #globalAdd:hover,
+#game .outils #roll:hover {
+  background: #d05663;
+}
+
+#game .outils #files {
+  overflow: hidden;
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+#game .outils #files #file {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#game .outils #files #file div:last-child {
+  color: white;
+}
+
+#game #imgPlayerUn {
+  margin: 10px auto;
+  overflow: hidden;
+  background-image: url("../img/tofus.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid #2a403d;
+}
+
+#game .imgUnPlay {
+  -webkit-box-shadow: 10px 10px 25px #2a403d;
+          box-shadow: 10px 10px 25px #2a403d;
+}
+
+#game .imgDeuxPlay {
+  -webkit-box-shadow: 10px 10px 25px #d05663;
+          box-shadow: 10px 10px 25px #d05663;
+}
+
+#game #imgPlayerDeux {
+  margin: 10px auto;
+  overflow: hidden;
+  background: white;
+  background-image: url("../img/bouftou.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid #d05663;
+}
+
+#messageEnd {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(128, 128, 128, 0.88);
+  width: 100%;
+  height: 100vh;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  text-decoration: underline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  color: white;
+  font-size: 2em;
+  padding: 30vh auto;
+  text-align: center;
+}
+
+#messageEnd .btnRestart {
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 5px auto;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+  background: #d05663;
+  color: white;
+  border: 2px solid #c3cbd6;
+}
+
+#messageEnd .btnRestart:hover {
+  background: white;
+  border-color: #d05663;
+  color: #d05663;
+}
+/*# sourceMappingURL=game.css.map */

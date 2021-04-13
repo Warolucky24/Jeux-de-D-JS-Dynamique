@@ -1,0 +1,93 @@
+.scene {
+  --longeurCote: 100px;
+  --largeurPar2 : calc(var(--longeurCote)/2);
+  --longeurParMoins2 : calc(var(--longeurCote)/(-2));
+  width: var(--longeurCote);
+  height: var(--longeurCote);
+  display: block;
+  margin: 2px auto;
+  perspective: calc(var(--longeurCote) * 2 );
+}
+.cube {
+  width: var(--longeurCote);
+  height: var(--longeurCote);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--longeurCote)/(-2)));
+  transition: transform 1s;
+}
+
+.cube.show-quatre {
+  transform: translateZ(var(--longeurParMoins2)) rotateY(0deg);
+}
+.cube.show-cinq {
+  transform: translateZ(var(--longeurParMoins2)) rotateY(-90deg);
+}
+.cube.show-trois {
+  transform: translateZ(var(--longeurParMoins2)) rotateY(-180deg);
+}
+.cube.show-deux {
+  transform: translateZ(var(--longeurParMoins2)) rotateY(90deg);
+}
+.cube.show-un {
+  transform: translateZ(var(--longeurParMoins2)) rotateX(-90deg);
+}
+.cube.show-six {
+  transform: translateZ(var(--longeurParMoins2)) rotateX(90deg);
+}
+
+.cube__face {
+  position: absolute;
+  width: var(--longeurCote);
+  height: var(--longeurCote);
+  border: 0px solid black;
+  line-height: var(--longeurCote);
+  text-align: center;
+}
+
+.cube__face--quatre {
+  background: url('../style/img/faceQuatre.png');
+  background-size: cover;
+}
+.cube__face--cinq {
+  background: url('../style/img/faceCinq.png');
+  background-size: cover;
+}
+.cube__face--trois {
+  background: url('../style/img/faceTrois.png');
+  background-size: cover;
+}
+.cube__face--deux {
+  background: url('../style/img/faceDeux.png');
+  background-size: cover;
+}
+
+/*  */
+.cube__face--un {
+  background: url('../style/img/faceUn.png');
+  background-size: cover;
+}
+/*   */
+.cube__face--six {
+  background: url('../style/img/faceSix.png');
+  background-size: cover;
+}
+
+.cube__face--quatre {
+  transform: rotateY(0deg) translateZ(var(--largeurPar2));
+}
+.cube__face--cinq {
+  transform: rotateY(90deg) translateZ(var(--largeurPar2));
+}
+.cube__face--trois {
+  transform: rotateY(180deg) translateZ(var(--largeurPar2));
+}
+.cube__face--deux {
+  transform: rotateY(-90deg) translateZ(var(--largeurPar2));
+}
+.cube__face--un {
+  transform: rotateX(90deg) translateZ(var(--largeurPar2));
+}
+.cube__face--six {
+  transform: rotateX(-90deg) translateZ(var(--largeurPar2));
+}

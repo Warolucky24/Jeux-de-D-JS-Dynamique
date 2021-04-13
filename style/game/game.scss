@@ -1,0 +1,276 @@
+// ------------Variable color thême -------------------------------------------------
+$colorFont: #c3cbd6;
+$colorTxt: #2a403d;
+$color1: #748b6f;
+$color2: #d05663;
+$blanc: white;
+
+// Media Grand Écran ------------------------------------------------------------------------
+@media screen and (min-width: 851px) {
+  .boxJoueurUn,
+  .boxJoueurDeux,
+  .outils {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #imgPlayerUn,
+  #imgPlayerDeux {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+  }
+  .boxJoueurUn {
+    border-radius: 20px 0px 0px 20px;
+  }
+  .boxJoueurDeux {
+    border-radius: 0px 20px 20px 0px;
+  }
+  #files {
+    width: 300px;
+    height: 250px;
+  }
+  .gameBoard {
+    width: 98%;
+    background: $colorFont;
+    border: 2px solid $color2;
+    border-radius: 10px 40px;
+    height: 90vh;
+  }
+}
+// Début petit écran --------------------------------------------------------------------------------------
+@media screen and (max-width: 850px) {
+  #game {
+    background: $colorFont;
+  }
+  .gameBoard {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .boxJoueurUn,
+  .boxJoueurDeux {
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 50%);
+    align-self: center;
+  }
+  .outils {
+    width: 97%;
+    display: grid;
+    grid-template-columns: 44% 28% 28%;
+    grid-template-rows: 80% 20%;
+
+    grid-template-areas:
+      "file cube cube"
+      "file roll valid";
+    #files {
+      grid-area: file;
+      width: 100%;
+      height: 200px;
+    }
+    #dd {
+      grid-area: cube;
+    }
+    #roll {
+      grid-area: roll;
+    }
+    #globalAdd {
+      grid-area: valid;
+    }
+  }
+
+  .boxJoueurUn,
+  .boxJoueurDeux {
+    grid-template-areas:
+      "img name pointRound"
+      "img name pointGlobal";
+    #imgPlayerUn,
+    #imgPlayerDeux {
+      grid-area: img;
+    }
+    #nameJoueurUn,
+    #nameJoueurDeux {
+      grid-area: name;
+    }
+    .pointRUn,
+    .pointRDeux {
+      grid-area: pointRound;
+    }
+    .pointGUn,
+    .pointGDeux {
+      grid-area: pointGlobal;
+    }
+  }
+
+  #imgPlayerUn,
+  #imgPlayerDeux {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+  .boxJoueurUn {
+    border-radius: 20px 20px 0px 0px;
+  }
+  .boxJoueurDeux {
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+
+// Fin média--------------------------------------------------------------------------------
+
+#game {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  transform: scale(0, 0);
+  transition: all 0.8s ease-out;
+  background: url("../img/fundDeux.jpg") no-repeat;
+  background-size: cover;
+
+  .gameBoard {
+    position: relative;
+    margin: 20px auto;
+    background: rgba(238, 238, 238, 0.4);
+  }
+  .boxJoueurUn,
+  .boxJoueurDeux,
+  .outils {
+    padding: 5px;
+    margin: 1%;
+    span {
+      font-weight: bold;
+    }
+  }
+  .boxJoueurUn {
+    border: 2px solid $colorTxt;
+    background: #748b6f56;
+  }
+  .boxJoueurDeux {
+    border: 2px solid $color2;
+    background: #d0566249;
+  }
+  .outils {
+    border: 2px solid $colorTxt;
+    background: $color1;
+
+    #roll,
+    #globalAdd {
+      text-align: center;
+      width: 50%;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.8s ease-out;
+    }
+    .btnRestart {
+      background: $color2;
+      color: white;
+      border: 2px solid $colorFont;
+
+      &:hover {
+        background: white;
+        border-color: $color2;
+        color: $color2;
+      }
+    }
+
+    #globalAdd,
+    #roll {
+      background: $color1;
+      color: white;
+      border: 2px solid white;
+      &:hover {
+        background: $color2;
+      }
+    }
+    #files {
+      overflow: hidden;
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.6);
+      position: relative;
+
+      #file {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+
+        div:last-child {
+          color: white;
+        }
+      }
+    }
+  }
+  #imgPlayerUn {
+    margin: 10px auto;
+    overflow: hidden;
+    background-image: url("../img/tofus.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid $colorTxt;
+  }
+  .imgUnPlay {
+    box-shadow: 10px 10px 25px $colorTxt;
+  }
+  .imgDeuxPlay {
+    box-shadow: 10px 10px 25px $color2;
+  }
+
+  #imgPlayerDeux {
+    margin: 10px auto;
+    overflow: hidden;
+    background: $blanc;
+    background-image: url("../img/bouftou.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid $color2;
+  }
+}
+
+#messageEnd {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(128, 128, 128, 0.88);
+  width: 100%;
+  height: 100vh;
+  transform: scale(0, 1);
+  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  color: $blanc;
+  font-size: 2em;
+  padding: 30vh auto;
+  text-align: center;
+
+  .btnRestart {
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+    margin: 5px auto;
+    cursor: pointer;
+    transition: all 0.8s ease-out;
+    background: $color2;
+    color: white;
+    border: 2px solid $colorFont;
+    &:hover {
+      background: white;
+      border-color: $color2;
+      color: $color2;
+    }
+  }
+}
