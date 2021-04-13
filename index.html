@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Jeux de Dé" content="Seul ou à plusieurs venez vous amusez avec ce mini-jeux de dé" />
+    <title>Jeux de Dé || Mathieu</title>
+    <link rel="stylesheet" href="style/acceuil/acceuil.css">
+    <link rel="stylesheet" href="style/game/game.css">
+    <link rel="stylesheet" href="style/cubeAnime.css">
+</head>
+
+<body>
+
+    <div id="acceuil">
+        <h1 class="txt-r">ÉVALUATION D'ENTRAINEMENT</h1>
+        <h2 class="underline">Dynamiser vos sites web avec Javascript</h2>
+        <div class="row">
+            <div class="bodyButton">
+                <div class="buttonNum"><span class="nbrJ">2</span></div>
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col txt-r textPlayerUn">
+                Nom du premier joueur :
+            </div>
+            <div class="col">
+                <input type="text" id="namePlayerUn" class="bloc">
+            </div>
+        </div>
+        <div class="row two">
+            <div class="col txt-r">Nom du deuxième joueur :</div>
+            <div class="col">
+                <input type="text" id="namePlayerDeux" class="bloc">
+            </div>
+        </div>
+
+        <div class="btn" id="btnCommencer">Commencer !</div>
+        <div class="Signal"></div>
+        <div class="btnHelp">Règle du jeu</div>
+
+        <div class="modalHelp">
+            <div class="bodyModal">
+                <div class="modalTitle">Régle du jeu :</div>
+                <div class="modalText">La première personne arrivée au nombre de points correspondant gagne ! C'est simple ?
+                <hr>
+                Faites tourner le dé et gagner ! <br>
+                Chaque lancer l'ajoute au score round (tour). Si vous tombez sur le 1, vous perdez tous votre score round et passez votre tour.
+                <br>
+                Il est possible de sauvegarder ces points dans les points globaux mais cela impose de passer son tour ! 
+                <br>
+                Bonne chance !!!
+                </div>
+                <div class="btnClose">fermer</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="game" class="gameOff">
+        <div class="row gameBoard">        
+            <div class="boxJoueurUn">
+                <div id="imgPlayerUn" class="imgUnPlay"></div>
+                <div id="nameJoueurUn"></div>
+                <div class="pointRUn">Point Round : <span id="pointRoundUn">0</span></div>
+                <div class="pointGUn">Point global : <span id="pointGlobalUn">0</span></div>
+            </div>
+            <div class="outils">
+                <div id="files"><div id="file"></div></div>
+                <div id="dd">
+                    <div class="scene">
+                        <div class="cube">
+                            <div class="cube__face cube__face--quatre"></div>
+                            <div class="cube__face cube__face--trois"></div>
+                            <div class="cube__face cube__face--cinq"></div>
+                            <div class="cube__face cube__face--deux"></div>
+                            <div class="cube__face cube__face--un"></div>
+                            <div class="cube__face cube__face--six"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="roll">Lancez !</div>
+                <div id="globalAdd">Fin du tour !</div>
+            </div>        
+            <div class="boxJoueurDeux">
+                <div id="imgPlayerDeux" class="imgDeuxPlay"></div>
+                <div id="nameJoueurDeux"></div>
+                <div class="pointRDeux">Point Round : <span id="pointRoundDeux">0</span></div>
+                <div class="pointGDeux">Point global : <span id="pointGlobalDeux">0</span></div>
+            </div>
+        </div>
+        <div id="messageEnd">
+                <span class="message"></span>
+                <div class="btnRestart">Recommencer</div>
+        </div>
+    </div>
+</div>
+
+    <script src="./app/index.js"></script>
+    <script src="./app/joueur.js"></script>
+    <script src="./app/game.js"></script>
+    </div>
+</body>
+
+</html>
+
+</html>
